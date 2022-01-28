@@ -52,11 +52,11 @@ public class TestWithVariableParameters {
     }
 
 
-    //Параметризованная аннатоция с использованием CSV
+    //Параметризованная аннотация с использованием CSV
     @DisplayName("Тест с использованием CSV")
     @CsvSource({
             "мебель для гостиной,Стеллажи и книжные шкафы,90383339",
-            "лампы настольные, Детские товары, 80325694"
+            "лампы настольные,Детские товары,80325694"
     })
     @ParameterizedTest(name = "Поищем {0}")
     void searchTestWithCSV (String inputData, String elseInputData, String productNumber) {
@@ -68,7 +68,7 @@ public class TestWithVariableParameters {
     }
 
 
-    //Параметризованная аннатоция с использованием Stream
+    //Параметризованная аннотация с использованием Stream
     static Stream<Arguments> streamData() {
         return Stream.of(
                 Arguments.of("мебель для гостиной", "Стеллажи и книжные шкафы", "90383339"),
